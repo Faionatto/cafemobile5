@@ -15,6 +15,21 @@
   --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-principal: #c69c6d;     
+    --cor-destaque: #e0b084;      
+    --cor-fundo: #181310;         
+    --cor-card: #261e1a;         
+    --cor-texto: #f5ebe1;         
+    --cor-texto-suave: #b8a696;   
+    --cor-borda: #3b2f28;         
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
 /* Faz padding e borda contarem dentro da largura */
 * {
   box-sizing: border-box;
@@ -37,14 +52,14 @@ main {
 
 /* ---------- Topo ---------- */
 .topo {
-  position: sticky;      /* fica preso no topo ao rolar */
+  position: sticky;
   top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: var(--cor-principal);
+  background: #4a3222; 
   color: #fff;
 }
 
@@ -165,9 +180,9 @@ main {
   left: 0;
   right: 0;
   display: flex;
-  background: #fff;
-  border-top: 1px solid #eadfd3;
-  padding-bottom: env(safe-area-inset-bottom); /* iPhone com "barrinha" */
+  background: var(--cor-card);
+  border-top: 1px solid var(--cor-borda);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .aba {
@@ -240,11 +255,12 @@ main {
   height: 32px;
   border: 1px solid var(--cor-principal);
   border-radius: 50%;
-  background: #fff;
+  background: var(--cor-card);
   color: var(--cor-principal);
   font-size: 1.1rem;
   cursor: pointer;
 }
+
 
 .vazio {
   padding: 24px;
